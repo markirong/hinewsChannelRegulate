@@ -228,7 +228,16 @@ public class ChannelView extends ScrollView {
         if (channelList != null && channelList.size() > 0) {
             if (channelContents.size() != 0) {
                 for (Channel channel : channelList) {
-                    channel.channelBelong = channelContents.size();
+//                    channel.channelBelong = channelContents.size();
+                    channel.channelselected = channelContents.size()+"";
+
+
+
+
+
+
+
+
                 }
             } else {
                 myChannelCode = new int[channelList.size()];
@@ -898,7 +907,14 @@ public class ChannelView extends ScrollView {
                         channelAttr.channel = channelContent.get(i);
                         //为频道添加ChannelAttr属性
                         textView.setTag(channelAttr);
-                        textView.setText(channelContent.get(i).channelName);
+//                        textView.setText(channelContent.get(i).channelName);
+                        textView.setText(channelContent.get(i).channelname);
+
+
+
+
+
+
                         textView.setGravity(Gravity.CENTER);
                         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, channelTextSize);
                         if (j == 0) {
@@ -1188,7 +1204,14 @@ public class ChannelView extends ScrollView {
                 v.setBackgroundResource(channelNormalBackground);
             }
             ChannelAttr tag = (ChannelAttr) v.getTag();
-            int belong = tag.channel.channelBelong;
+//            int belong = tag.channel.channelBelong;
+            int belong = Integer.valueOf(tag.channel.channelselected);
+
+
+
+
+
+
             if (belong < 1 || belong > channelContents.size() - 1) {
                 belong = 1;
             }
